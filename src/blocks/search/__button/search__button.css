@@ -1,0 +1,15 @@
+.search__button {
+    width: 34px;
+    height: 34px;
+    background-color: #4285F4;
+    border-radius: 48px;
+    position: relative;
+    top: -82px;
+    right: calc(-100% + 41px);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

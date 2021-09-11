@@ -1,0 +1,10 @@
+.search__checkbox {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.search__checkbox:checked + .search__box {
+    background-image: url(../../../images/checkbox_off.svg);
+}

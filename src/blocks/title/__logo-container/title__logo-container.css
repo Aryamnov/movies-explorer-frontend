@@ -1,0 +1,5 @@
+.title__logo-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 60px;
+}

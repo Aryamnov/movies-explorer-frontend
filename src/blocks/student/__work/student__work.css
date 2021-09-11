@@ -1,0 +1,15 @@
+.student__work {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 50px;
+    padding: 20px 0 19px 0;
+    border-bottom: 1px solid #424242;
+    display: flex;
+    justify-content: space-between;
+}
+
+.student__work:last-child {
+    border-bottom: none;
+    padding-bottom: 125px;
+}

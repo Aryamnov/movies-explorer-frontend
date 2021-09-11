@@ -1,0 +1,9 @@
+.about__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+    padding: 110px 0 23px 0;
+    border-bottom: 1px solid #DADADA;
+    color: #FFFFFF;
+}

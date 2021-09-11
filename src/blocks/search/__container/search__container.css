@@ -1,0 +1,7 @@
+.search__container {
+    display: flex;
+    justify-content: center;
+    min-height: 20px;
+    position: relative;
+    bottom: 34px;
+}

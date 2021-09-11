@@ -1,0 +1,6 @@
+.about__info {
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 0 110px 0;
+    color: #FFFFFF;
+}

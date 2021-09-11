@@ -1,0 +1,9 @@
+.technologies__element {
+    width: 90px;
+    min-height: 60px;
+    border-radius: 10px;
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,13 @@
+.technologies__list {
+    list-style-type: none;
+    display: flex;
+    max-width: 690px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 0 100px 0;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}

@@ -1,0 +1,9 @@
+.student__title {
+    margin: 0;
+    padding: 110px 0 23px 0;
+    border-bottom: 1px solid #DADADA;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+}

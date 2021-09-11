@@ -1,0 +1,7 @@
+.about__all {
+    max-width: 550px;
+}
+
+.about__all:nth-child(1) {
+    padding-right: 40px;
+}

@@ -1,0 +1,11 @@
+.about__type {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8B8B8B;
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+    margin: 0;
+}
