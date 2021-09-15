@@ -1,0 +1,12 @@
+.profile__exit {
+    max-width: 410px;
+    min-height: 16px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE3465;
+    background-color: #202020;
+    border: none;
+    padding: 0;
+}

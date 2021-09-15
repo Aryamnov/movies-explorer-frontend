@@ -1,0 +1,13 @@
+.profile__edit {
+    margin: 220px 0 16px 0;
+    width: 410px;
+    min-height: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    background-color: #202020;
+    border: none;
+    color: #FFFFFF;
+    padding: 0;
+}

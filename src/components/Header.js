@@ -11,8 +11,8 @@ function Header(props) {
           <Switch>
             <Route exact path="/">
               <div className="header__buttoms">
-                  <Link className="header__registration">Регистрация</Link>
-                  <Link className="header__login"><button className="header__buttom">Войти</button></Link>
+                  <Link className="header__registration" to="/signup">Регистрация</Link>
+                  <Link className="header__login" to="/signin"><button className="header__buttom">Войти</button></Link>
               </div>
             </Route>
             <Route path="*">
@@ -21,8 +21,8 @@ function Header(props) {
                 <NavLink to="/saved-movies" className="header__link" activeClassName="header__link_active">Сохранённые фильмы</NavLink>
               </ul>
               <ul className="header__account">
-                <Link className="header__name">Аккаунт</Link>
-                <Link className=""><div className="header__icon-background"><img className="header__icon" alt="" src={logoAccount} /></div></Link>
+                <Link className="header__name" to="/profile">Аккаунт</Link>
+                <Link className="" to="/profile"><div className="header__icon-background"><img className="header__icon" alt="" src={logoAccount} /></div></Link>
               </ul>
             </Route>
           </Switch>

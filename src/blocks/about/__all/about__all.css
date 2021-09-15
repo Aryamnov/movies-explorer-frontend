@@ -5,3 +5,10 @@
 .about__all:nth-child(1) {
     padding-right: 40px;
 }
+
+@media screen and (max-width: 860px) {
+    .about__all:nth-child(1) {
+        padding-right: 0;
+        margin-bottom: 56px;
+    }
+}

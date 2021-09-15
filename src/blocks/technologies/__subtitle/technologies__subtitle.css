@@ -7,3 +7,17 @@
     line-height: 58px;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 1150px) {
+    .technologies__subtitle {
+        margin: 80px 0 22px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .technologies__subtitle {
+        margin: 60px 0 24px 0;
+        font-size: 30px;
+        line-height: 36px;
+    }
+}

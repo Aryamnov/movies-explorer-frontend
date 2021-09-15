@@ -3,3 +3,17 @@
     justify-content: space-between;
     margin-bottom: 100px;
 }
+
+@media screen and (max-width: 900px) {
+    .student__info {
+        margin-bottom: 90px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .student__info {
+        margin-top: 60px;
+        margin-bottom: 69px;
+        flex-direction: column-reverse;
+    }
+}

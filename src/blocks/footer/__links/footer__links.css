@@ -3,3 +3,10 @@
     list-style-type: none;
     margin: 0;
 }
+
+@media screen and (max-width: 500px) {
+    .footer__links {
+        flex-direction: column;
+        padding: 0;
+    }
+}

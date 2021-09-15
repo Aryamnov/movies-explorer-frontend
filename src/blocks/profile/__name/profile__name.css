@@ -1,0 +1,6 @@
+.profile__name {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+    min-height: 30px;
+}

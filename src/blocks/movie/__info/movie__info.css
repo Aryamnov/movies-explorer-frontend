@@ -1,0 +1,7 @@
+.movie__info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    bottom: 10px;
+}

@@ -7,3 +7,9 @@
     font-size: 12px;
     line-height: 16px;
 }
+
+@media screen and (max-width: 500px) {
+    .header__login {
+        margin-left: 14px;
+    }
+}

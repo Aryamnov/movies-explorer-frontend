@@ -4,3 +4,16 @@
     margin: 70px 0 110px 0;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 1150px) {
+    .about__info {
+        margin-bottom: 93px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .about__info {
+        flex-direction: column;
+        margin: 60px 0;
+    }
+}

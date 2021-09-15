@@ -1,0 +1,7 @@
+.movies__content {
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 543px;
+}

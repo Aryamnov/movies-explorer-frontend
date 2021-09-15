@@ -1,0 +1,15 @@
+.movie__time {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 10px;
+    color: #8B8B8B;
+    background-color: #2F2F2F;
+    width: 52px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}

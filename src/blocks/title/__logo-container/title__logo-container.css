@@ -3,3 +3,16 @@
     justify-content: flex-end;
     padding-bottom: 60px;
 }
+
+@media screen and (max-width: 1150px) {
+    .title__logo-container {
+        padding-bottom: 70px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title__logo-container {
+        width: 600px;
+        padding-bottom: 30px;
+    }
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import { Route, Link, Switch, NavLink } from "react-router-dom";
 import pointer from "../images/pointer.svg";
 
 function SearchForm(props) {

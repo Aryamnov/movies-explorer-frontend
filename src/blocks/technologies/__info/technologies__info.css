@@ -10,3 +10,19 @@
     line-height: 20px;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 1150px) {
+    .technologies__info {
+        padding-bottom: 83px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .technologies__info {
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 50px;
+    }
+}

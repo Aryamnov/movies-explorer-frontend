@@ -9,3 +9,23 @@
     line-height: 52px;
     padding: 50px 0 102px 0;
 }
+
+@media screen and (max-width: 1150px) {
+    .title__content {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .title__content {
+        padding: 300px 0 140px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title__content {
+        font-size: 31px;
+        line-height: 39px;
+        padding: 183px 0 60px 0;
+    }
+}

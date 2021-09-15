@@ -6,3 +6,17 @@
     text-decoration: none;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 900px) {
+    .student__arrow {
+        font-size: 28px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .student__arrow {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}

@@ -1,0 +1,9 @@
+.movie__link {
+    height: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.movie__link:hover {
+    z-index: 0;
+}

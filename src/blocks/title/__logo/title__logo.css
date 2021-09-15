@@ -3,3 +3,10 @@
     width: 722px;
     height: 244px;
 }
+
+@media screen and (max-width: 810px) {
+    .title__logo {
+        width: 100%;
+        overflow: hidden;
+    }
+}

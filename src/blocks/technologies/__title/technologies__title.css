@@ -8,3 +8,18 @@
     line-height: 27px;
     margin: 0;
 }
+
+@media screen and (max-width: 1150px) {
+    .technologies__title {
+        padding-top: 90px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .technologies__title {
+        padding: 70px 0 28px 0;
+        font-size: 18px;
+        line-height: 22px;
+        border-bottom: 1px solid #000000;
+    }
+}

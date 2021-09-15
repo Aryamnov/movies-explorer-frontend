@@ -7,3 +7,18 @@
     padding-bottom: 99px;
     margin: 0;
 }
+
+@media screen and (max-width: 1000px) {
+    .student__about {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .student__about {
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 40px;
+    }
+}

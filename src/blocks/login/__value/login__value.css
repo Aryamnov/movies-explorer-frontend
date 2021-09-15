@@ -1,0 +1,11 @@
+.login__value {
+    background-color: #2F2F2F;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 46px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    padding-left: 15px;
+}

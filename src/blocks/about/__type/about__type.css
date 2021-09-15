@@ -9,3 +9,10 @@
     padding-top: 14px;
     margin: 0;
 }
+
+@media screen and (max-width: 600px) {
+    .about__type {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

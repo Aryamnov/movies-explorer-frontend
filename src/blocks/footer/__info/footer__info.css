@@ -4,3 +4,11 @@
     align-items: center;
     padding: 20px 0 20px 0;
 }
+
+@media screen and (max-width: 500px) {
+    .footer__info {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 0 10px 0;
+    }
+}

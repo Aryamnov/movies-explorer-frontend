@@ -4,3 +4,17 @@
     font-size: 14px;
     line-height: 20px;
 }
+
+@media screen and (max-width: 900px) {
+    .about__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about__text {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
