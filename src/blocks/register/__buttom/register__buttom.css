@@ -5,4 +5,14 @@
     background-color: #4285F4;
     border-radius: 3px;
     border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media screen and (max-width: 500px) {
+    .register__buttom {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }

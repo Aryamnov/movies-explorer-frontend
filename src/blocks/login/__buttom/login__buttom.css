@@ -1,8 +1,18 @@
 .login__buttom {
-    margin: 169px 0 16px 0;
+    margin: 69px 0 16px 0;
     width: 100%;
     min-height: 45px;
     background-color: #4285F4;
     border-radius: 3px;
     border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media screen and (max-width: 500px) {
+    .login__buttom {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }

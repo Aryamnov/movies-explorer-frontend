@@ -4,3 +4,15 @@
     background-color: #313131;
     right: -325px;
 }
+
+@media screen and (max-width: 800px) {
+    .movie__save_close {
+        right: -301px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .movie__save_close {
+        right: -262px;
+    }
+}

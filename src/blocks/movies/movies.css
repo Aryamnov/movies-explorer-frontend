@@ -7,3 +7,15 @@
     flex-direction: column;
     align-items: center;
 }
+
+@media screen and (max-width: 1150px) {
+    .movies {
+        margin: 70px 30px 80px 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .movies {
+        margin: 40px 10px 80px 10px;
+    }
+}

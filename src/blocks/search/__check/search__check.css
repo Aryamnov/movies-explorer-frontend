@@ -8,3 +8,10 @@
     display: flex;
     align-items: center;
 }
+
+@media screen and (max-width: 650px) {
+    .search__check {
+        font-size: 11px;
+        line-height: 18px;
+    }
+}

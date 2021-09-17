@@ -18,3 +18,17 @@
 .movie__save:hover {
     z-index: 4;
 }
+
+@media screen and (max-width: 800px) {
+    .movie__save {
+        right: -250px;
+        top: -180px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .movie__save {
+        right: -211px;
+        top: -158px;
+    }
+}

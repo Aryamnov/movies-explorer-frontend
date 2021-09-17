@@ -6,3 +6,15 @@
     color: #8B8B8B;
     margin: 5px 0 10px 0;
 }
+
+@media screen and (max-width: 900px) {
+    .login__nomination {
+        margin: 0 0 10px 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .login__nomination {
+        margin-top: 10px;
+    }
+}

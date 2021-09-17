@@ -1,5 +1,5 @@
 .movies__button {
-    margin-top: 14px;
+    margin-top: 50px;
     width: 320px;
     height: 36px;
     border: 1px solid #424242;
@@ -10,4 +10,17 @@
     line-height: 15px;
     color: #FFFFFF;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .movies__button {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .movies__button {
+        width: 240px;
+        margin-top: 24px;
+    }
 }

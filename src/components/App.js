@@ -1,4 +1,5 @@
 import logo from "../logo.svg";
+import React from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Header";
 import Title from "./Title";
@@ -16,7 +17,7 @@ import NotFound from "./NotFound";
 import Navigation from "./Navigation";
 
 function App() {
-  return (
+    return (
     <div className="page">
       <Switch>
         <Route path="/signup">

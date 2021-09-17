@@ -6,7 +6,7 @@ import away from "../images/delete.svg";
 
 function MoviesCard(props) {
   return (
-    <section className="movie">
+    <li className="movie">
       <div className="movie__contant">
         <a className="movie__link" href="#"><img className="movie__image" alt="" src={movieExample} /></a>
         <Switch>
@@ -22,7 +22,7 @@ function MoviesCard(props) {
         <h2 className="movie__name">33 слова о дизайне</h2>
         <p className="movie__time">1ч 17м</p>
       </div>
-    </section>
+    </li>
   );
 }
 

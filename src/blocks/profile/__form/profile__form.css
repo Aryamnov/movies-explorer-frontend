@@ -1,3 +1,9 @@
 .profile__form {
     width: 410px;
 }
+
+@media screen and (max-width: 500px) {
+    .profile__form {
+        max-width: 260px;
+    }
+}

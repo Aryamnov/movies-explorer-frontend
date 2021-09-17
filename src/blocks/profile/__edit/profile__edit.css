@@ -1,6 +1,6 @@
 .profile__edit {
     margin: 220px 0 16px 0;
-    width: 410px;
+    min-width: 410px;
     min-height: 16px;
     font-style: normal;
     font-weight: normal;
@@ -10,4 +10,20 @@
     border: none;
     color: #FFFFFF;
     padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .profile__edit {
+        margin-top: 210px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile__edit {
+        margin-top: 379px;
+        min-width: 0px;
+        width: 100%;
+        font-size: 12px;
+        line-height: 15px;
+    }
 }

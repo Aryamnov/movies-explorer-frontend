@@ -5,3 +5,15 @@
     border-bottom: 1px solid #424242;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 1150px) {
+    .search {
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .search {
+        margin: 0 14px;
+    }
+}

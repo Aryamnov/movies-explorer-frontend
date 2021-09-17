@@ -4,7 +4,7 @@ import MoviesCard from "./MoviesCard";
 function MoviesCardList(props) {
   return (
     <section className="movies">
-      <div className="movies__content">
+      <ul className="movies__content">
         <MoviesCard />
         <MoviesCard saved={true} />
         <MoviesCard />
@@ -14,7 +14,7 @@ function MoviesCardList(props) {
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
-      </div>
+      </ul>
       <button className="movies__button">Ещё</button>
     </section>
   );

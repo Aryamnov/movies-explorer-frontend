@@ -16,7 +16,7 @@ function Login(props) {
       </form>
       <div className="login__nav">
         <p className="login__question">Ещё не зарегистрированы?</p>
-        <Link to="/signup" className="login__link">Ещё не зарегистрированы?</Link>
+        <Link to="/signup" className="login__link">Регистрация</Link>
       </div>
     </section>
   );

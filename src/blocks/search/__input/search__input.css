@@ -12,3 +12,16 @@
     font-size: 13px;
     line-height: 17px;
 }
+
+@media screen and (max-width: 900px) {
+    .search__input {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .search__input {
+        font-size: 11px;
+        line-height: 17px;
+    }
+}

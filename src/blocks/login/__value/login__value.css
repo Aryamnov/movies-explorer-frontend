@@ -8,4 +8,12 @@
     margin-bottom: 10px;
     color: #FFFFFF;
     padding-left: 15px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+@media screen and (max-width: 500px) {
+    .login__value {
+        width: calc(100% - 15px);
+    }
 }

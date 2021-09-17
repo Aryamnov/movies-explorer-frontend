@@ -6,3 +6,16 @@
     color: #FFFFFF;
     margin: 0 0 35px 0;
 }
+
+@media screen and (max-width: 900px) {
+    .register__title {
+        margin: 0 0 40px 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .register__title {
+        text-align: center;
+        margin: 0 0 70px 0;
+    }
+}

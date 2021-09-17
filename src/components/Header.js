@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link, Switch, NavLink } from "react-router-dom";
 import logo from "../images/logo.svg";
 import logoAccount from "../images/account-logo.svg";
+import menu from "../images/menu.svg";
 
 function Header(props) {
   return (
@@ -24,6 +25,7 @@ function Header(props) {
                 <Link className="header__name" to="/profile">Аккаунт</Link>
                 <Link className="" to="/profile"><div className="header__icon-background"><img className="header__icon" alt="" src={logoAccount} /></div></Link>
               </ul>
+              <button className="header__menu"><img className="" alt="" src={menu} /></button>
             </Route>
           </Switch>
       </div>
