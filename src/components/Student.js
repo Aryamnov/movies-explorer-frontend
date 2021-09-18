@@ -26,7 +26,7 @@ function Student(props) {
               </a>
             </div>
           </div>
-          <img className="student__avatar" alt="" src={avatar}></img>
+          <img className="student__avatar" alt="Аватарка студента." src={avatar} />
         </div>
         <p className="student__portfolio">Портфолио</p>
         <ul className="student__works">

@@ -8,13 +8,13 @@ function MoviesCard(props) {
   return (
     <li className="movie">
       <div className="movie__contant">
-        <a className="movie__link" href="#"><img className="movie__image" alt="" src={movieExample} /></a>
+        <a className="movie__link" href="#"><img className="movie__image" alt="ПРимер для верстки." src={movieExample} /></a>
         <Switch>
           <Route path="/movies">
-            <button className={props.saved === true ? "movie__save movie__save_active" : "movie__save"}>{props.saved === true ? <img src={checkMark}/> : "Сохранить"}</button>
+            <button className={props.saved === true ? "movie__save movie__save_active" : "movie__save"}>{props.saved === true ? <img src={checkMark} alt="Иконка для сохранения и отображения состояния сохранения."/> : "Сохранить"}</button>
           </Route>
           <Route path="/saved-movies">
-            <button className="movie__save movie__save_close"><img src={away}/></button>
+            <button className="movie__save movie__save_close"><img src={away} alt="Иконка закрытия."/></button>
           </Route>
         </Switch>
       </div>

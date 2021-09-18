@@ -8,7 +8,7 @@ function Header(props) {
   return (
     <header className={props.backgroundColor === "gray" ? "header header_background_gray" : "header"}>
       <div className="header__container">
-          <img className="header__logo" alt="" src={logo} />
+          <img className="header__logo" alt="Логотип диплома." src={logo} />
           <Switch>
             <Route exact path="/">
               <div className="header__buttoms">
@@ -23,9 +23,9 @@ function Header(props) {
               </ul>
               <ul className="header__account">
                 <Link className="header__name" to="/profile">Аккаунт</Link>
-                <Link className="" to="/profile"><div className="header__icon-background"><img className="header__icon" alt="" src={logoAccount} /></div></Link>
+                <Link className="" to="/profile"><div className="header__icon-background"><img className="header__icon" alt="Иконка аккаунта." src={logoAccount} /></div></Link>
               </ul>
-              <button className="header__menu" onClick={props.onOpen}><img className="" alt="" src={menu} /></button>
+              <button className="header__menu" onClick={props.onOpen}><img className="" alt="иконка бургер-меню" src={menu} /></button>
             </Route>
           </Switch>
       </div>

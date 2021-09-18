@@ -5,7 +5,7 @@ import logo from "../images/logo.svg";
 function Register(props) {
   return (
     <section className="register">
-      <img className="register__logo" alt="" src={logo} />
+      <img className="register__logo" alt="Логотип диплома." src={logo} />
       <h1 className="register__title">Добро пожаловать!</h1>
       <form className="register__form">
         <p className="register__nomination">Имя</p>

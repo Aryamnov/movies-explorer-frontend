@@ -5,7 +5,7 @@ import logo from "../images/logo.svg";
 function Login(props) {
   return (
     <section className="login">
-      <img className="login__logo" alt="" src={logo} />
+      <img className="login__logo" alt="Логотип диплома." src={logo} />
       <h1 className="login__title">Рады видеть!</h1>
       <form className="login__form">
         <p className="login__nomination">E-mail</p>

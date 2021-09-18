@@ -13,7 +13,7 @@ function SearchForm(props) {
         minLength="2"
         maxLength="40"
         required
-      /><button type="submit" className="search__button"><img src={pointer} alt="" className="" /></button>
+      /><button type="submit" className="search__button"><img src={pointer} alt="Иконка для старта поиска." className="" /></button>
       <div className="search__container">
         <label className="search__check">
             <input className="search__checkbox" type="checkbox" />

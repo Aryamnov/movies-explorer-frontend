@@ -6,3 +6,10 @@
     color: #4285F4;
     text-decoration: none;
 }
+
+@media screen and (max-width: 450px) {
+    .not-found__subtitle {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
