@@ -1,6 +1,6 @@
 .menu {
     position: fixed;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     top: 0;
@@ -9,4 +9,5 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     transition: visibility 1s, opacity 0.8s;
+    z-index: 100;
 }

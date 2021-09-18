@@ -135,3 +135,4 @@
 @import url(./blocks/menu/__name/menu__name.css);
 @import url(./blocks/menu/__icon-background/menu__icon-background.css);
 @import url(./blocks/menu/__icon/menu__icon.css);
+@import url(./blocks/menu/_active/menu_active.css);

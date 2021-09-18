@@ -17,7 +17,17 @@ import NotFound from "./NotFound";
 import Navigation from "./Navigation";
 
 function App() {
-    return (
+  const [isMenuOpen, setMenuOpen] = React.useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  return (
     <div className="page">
       <Switch>
         <Route path="/signup">
@@ -27,31 +37,39 @@ function App() {
           <Login />
         </Route>
         <Route path="/movies">
-          <Header backgroundColor={"gray"} />
+          <Header backgroundColor={"gray"} onOpen={handleMenuClick} />
           <SearchForm />
           <Preloader />
           <MoviesCardList />
           <Footer />
+          <Navigation
+          isOpen={isMenuOpen}
+          onClose={closeMenu}
+          />
         </Route>
         <Route path="/saved-movies">
-          <Header backgroundColor={"gray"} />
+          <Header backgroundColor={"gray"} onOpen={handleMenuClick} />
           <SearchForm />
           <Preloader />
           <MoviesCardList />
           <Footer />
+          <Navigation
+          isOpen={isMenuOpen}
+          onClose={closeMenu}
+          />
         </Route>
         <Route path="/profile">
-          <Header backgroundColor={"gray"} />
+          <Header backgroundColor={"gray"} onOpen={handleMenuClick} />
           <Profile />
         </Route>
         <Route exact path="/">
-          <Header />
+          <Header/>
           <Title />
           <About />
           <Technologies />
           <Student />
           <Footer />
-          <Navigation />
+          
         </Route>
         <Route path="*">
           <NotFound />
