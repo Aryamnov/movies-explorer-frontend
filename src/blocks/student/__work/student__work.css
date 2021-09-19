@@ -15,6 +15,9 @@
     padding-bottom: 125px;
 }
 
+.student__work:hover {
+    opacity: 0.7;
+}
 
 @media screen and (max-width: 900px) {
     .student__work {

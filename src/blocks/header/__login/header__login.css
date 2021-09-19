@@ -8,6 +8,10 @@
     line-height: 16px;
 }
 
+.header__login:hover {
+    opacity: 0.7;
+}
+
 @media screen and (max-width: 500px) {
     .header__login {
         margin-left: 14px;

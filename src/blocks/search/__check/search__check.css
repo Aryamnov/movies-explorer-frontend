@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.search__check:hover {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 650px) {
     .search__check {
         font-size: 11px;

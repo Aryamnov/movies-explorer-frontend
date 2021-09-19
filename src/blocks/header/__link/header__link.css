@@ -8,6 +8,10 @@
     line-height: 18px;
 }
 
+.header__link:hover {
+    opacity: 0.7;
+}
+
 .header__link:last-child {
     margin: 0;
 }

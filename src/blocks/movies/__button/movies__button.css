@@ -12,6 +12,10 @@
     border-radius: 5px;
 }
 
+.movies__button:hover {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
     .movies__button {
         margin-top: 8px;

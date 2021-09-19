@@ -11,6 +11,13 @@
     font-weight: normal;
     font-size: 13px;
     line-height: 17px;
+    transition: box-shadow 1s;
+}
+
+.search__input:focus {
+    box-shadow: 1px 0px 10px 0px rgba(255,255,255,0.75);
+    -webkit-box-shadow: 2px 0px 10px 0px rgba(255,255,255,0.75);
+    -moz-box-shadow: 2px 0px 10px 0px rgba(255,255,255,0.75);
 }
 
 @media screen and (max-width: 900px) {

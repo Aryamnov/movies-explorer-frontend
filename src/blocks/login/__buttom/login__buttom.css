@@ -10,6 +10,10 @@
     line-height: 17px;
 }
 
+.login__buttom:hover {
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 500px) {
     .login__buttom {
         font-size: 12px;

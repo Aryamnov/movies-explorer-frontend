@@ -10,6 +10,10 @@
     line-height: 17px;
 }
 
+.register__buttom:hover {
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 500px) {
     .register__buttom {
         font-size: 12px;

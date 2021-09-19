@@ -6,6 +6,10 @@
     line-height: 17px;
 }
 
+.student__link:hover {
+    opacity: 0.7;
+}
+
 @media screen and (max-width: 1000px) {
     .student__link {
 

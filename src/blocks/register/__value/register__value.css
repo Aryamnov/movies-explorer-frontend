@@ -12,6 +12,12 @@
     line-height: 16px;
 }
 
+.register__value:focus {
+    box-shadow: 1px 0px 10px 0px rgba(255,255,255,0.75);
+    -webkit-box-shadow: 2px 0px 10px 0px rgba(255,255,255,0.75);
+    -moz-box-shadow: 2px 0px 10px 0px rgba(255,255,255,0.75);
+}
+
 @media screen and (max-width: 500px) {
     .register__value {
         width: calc(100% - 15px);
