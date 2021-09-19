@@ -10,6 +10,7 @@
     border: none;
     color: #FFFFFF;
     padding: 0;
+    transition: opacity 0.7s;
 }
 
 .profile__edit:hover {

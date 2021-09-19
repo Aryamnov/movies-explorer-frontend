@@ -4,6 +4,7 @@
     color: #FFFFFF;
     font-size: 14px;
     line-height: 17px;
+    transition: opacity 0.7s;
 }
 
 .student__link:hover {

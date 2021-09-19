@@ -61,6 +61,10 @@ function App() {
         <Route path="/profile">
           <Header backgroundColor={"gray"} onOpen={handleMenuClick} />
           <Profile />
+          <Navigation
+          isOpen={isMenuOpen}
+          onClose={closeMenu}
+          />
         </Route>
         <Route exact path="/">
           <Header/>

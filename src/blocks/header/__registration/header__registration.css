@@ -5,6 +5,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+    transition: opacity 1s;
 }
 
 .header__registration:hover {

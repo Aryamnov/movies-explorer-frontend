@@ -8,7 +8,7 @@
     margin: 0;
 }
 
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 737px) {
     .movies__content {
         justify-content: center;
     }

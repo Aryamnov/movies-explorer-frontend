@@ -5,6 +5,7 @@
     line-height: 17px;
     color: #4285F4;
     text-decoration: none;
+    transition: opacity 0.7s;
 }
 
 .login__link:hover {
