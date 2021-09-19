@@ -10,6 +10,14 @@
     }
 }
 
+@media screen and (max-width: 810px) {
+    .title__logo-container {
+        max-width: 100%;
+        overflow: hidden;
+        justify-content: center;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .title__logo-container {
         width: 600px;

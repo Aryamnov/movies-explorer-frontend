@@ -7,7 +7,7 @@ function Navigation(props) {
   return (
     <section className={`menu ${props.isOpen ? `menu_active` : ``}`}>
         <div className="menu__container">
-          <button className="menu__close" onClick={props.onClose}><img src={close} alt="Иконка закрытия." className="" /></button>
+          <button className="menu__close" onClick={props.onClose}><img src={close} alt="Иконка закрытия." className="menu__cross" /></button>
           <ul className="menu__list">
               <li className="menu__element"><NavLink exact to="/" className="menu__link" activeClassName="menu__link_active">Главная</NavLink></li>
               <li className="menu__element"><NavLink to="/movies" className="menu__link" activeClassName="menu__link_active">Фильмы</NavLink></li>

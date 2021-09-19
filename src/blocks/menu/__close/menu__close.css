@@ -1,6 +1,7 @@
 .menu__close {
     background-color: #202020;
     border: none;
-    align-self: end;
+    display: flex;
+    justify-content: flex-end;
     margin: 29px 29px 0 0;
 }
