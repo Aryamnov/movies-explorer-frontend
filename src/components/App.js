@@ -1,4 +1,3 @@
-import logo from "../logo.svg";
 import React from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Header";
@@ -15,9 +14,11 @@ import Register from "./Register";
 import Login from "./Login";
 import NotFound from "./NotFound";
 import Navigation from "./Navigation";
+import moviesApi from "../utils/MoviesApi";
 
 function App() {
   const [isMenuOpen, setMenuOpen] = React.useState(false);
+  const [cards, setCards] = React.useState([]);
 
   const handleMenuClick = () => {
     setMenuOpen(true);
@@ -26,6 +27,18 @@ function App() {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
+  React.useEffect(() => {
+    moviesApi
+      .getCard()
+      .then((movies) => {
+        console.log(movies);
+        setCards(movies);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="page">
@@ -40,7 +53,7 @@ function App() {
           <Header backgroundColor={"gray"} onOpen={handleMenuClick} />
           <SearchForm />
           <Preloader />
-          <MoviesCardList />
+          <MoviesCardList cards={cards} />
           <Footer />
           <Navigation
           isOpen={isMenuOpen}

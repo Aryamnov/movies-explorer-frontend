@@ -72,6 +72,8 @@
 @import url(./blocks/search/__check/search__check.css);
 @import url(./blocks/search/__checkbox/search__checkbox.css);
 @import url(./blocks/search/__box/search__box.css);
+@import url(./blocks/search/__error/search__error.css);
+@import url(./blocks/search/__error/_active/search__error_active.css);
 @import url(./blocks/preloader/preloader.css);
 @import url(./blocks/preloader/_active/preloader_active.css);
 @import url(./blocks/preloader/__container/preloader__container.css);
