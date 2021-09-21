@@ -1,23 +1,16 @@
 import React from "react";
 import pointer from "../images/pointer.svg";
 
-function SearchForm(props) {
-  const [request, setRequest] = React.useState("");
-  const [fill, setFill] = React.useState(true);
-
-  function handleChangeRequest(e) {
-    if (e.target.value === "") {
-      setFill(false);
-      setRequest(e.target.value);
-      return;
-    }
-    setRequest(e.target.value);
-    setFill(true);
-  }
+function SearchForm({
+  request,
+  fill,
+  onEdtitRequest,
+  onSubmit
+}) {
 
   return (
     <section>
-      <form className="search">
+      <form onSubmit={onSubmit} className="search">
         <input
           name="movie"
           placeholder="Фильм"
@@ -26,7 +19,7 @@ function SearchForm(props) {
           minLength="2"
           maxLength="40"
           value={request}
-          onChange={handleChangeRequest}
+          onChange={onEdtitRequest}
           required
         />
         <button type="submit" className="search__button">

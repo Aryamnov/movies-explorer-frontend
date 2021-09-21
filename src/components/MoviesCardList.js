@@ -1,7 +1,7 @@
 import React from "react";
 import MoviesCard from "./MoviesCard";
 
-function MoviesCardList({cards}) {
+function MoviesCardList({ cards }) {
   return (
     <section className="movies">
       <ul className="movies__content">
@@ -15,10 +15,8 @@ function MoviesCardList({cards}) {
         <MoviesCard />
         <MoviesCard />*/}
         {cards.map((card) => (
-            <MoviesCard
-              card={card}
-            />
-          ))}
+          <MoviesCard card={card} key={card.id} />
+        ))}
       </ul>
       <button className="movies__button">Ещё</button>
     </section>

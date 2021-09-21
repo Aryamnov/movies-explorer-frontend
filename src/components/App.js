@@ -19,6 +19,18 @@ import moviesApi from "../utils/MoviesApi";
 function App() {
   const [isMenuOpen, setMenuOpen] = React.useState(false);
   const [cards, setCards] = React.useState([]);
+  const [request, setRequest] = React.useState("");
+  const [fill, setFill] = React.useState(true);
+
+  function handleChangeRequest(e) {
+    if (e.target.value === "") {
+      setFill(false);
+      setRequest(e.target.value);
+      return;
+    }
+    setRequest(e.target.value);
+    setFill(true);
+  }
 
   const handleMenuClick = () => {
     setMenuOpen(true);
@@ -28,12 +40,31 @@ function App() {
     setMenuOpen(false);
   };
 
+  function handleSubmitSearch(e) {
+    e.preventDefault();
+    moviesApi
+      .getCard()
+      .then((movies) => {
+        console.log(movies);
+        const moviesFilter = movies.filter(function (element) {
+          return element.nameRU.toLowerCase().includes(request.toLowerCase());
+        })
+        setCards(moviesFilter);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   React.useEffect(() => {
     moviesApi
       .getCard()
       .then((movies) => {
         console.log(movies);
-        setCards(movies);
+        const moviesFilter = movies.filter(function (e) {
+          return e.nameRU.toLowerCase().includes('звук');
+        })
+        setCards(moviesFilter);
       })
       .catch((err) => {
         console.log(err);
@@ -51,7 +82,12 @@ function App() {
         </Route>
         <Route path="/movies">
           <Header backgroundColor={"gray"} onOpen={handleMenuClick} />
-          <SearchForm />
+          <SearchForm 
+            request={request}
+            fill={fill}
+            onEdtitRequest={handleChangeRequest}
+            onSubmit={handleSubmitSearch}
+          />
           <Preloader />
           <MoviesCardList cards={cards} />
           <Footer />
