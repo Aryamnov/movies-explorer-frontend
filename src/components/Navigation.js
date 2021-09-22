@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, Switch, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import close from "../images/close.svg";
 import logoAccount from "../images/account-logo.svg";
 

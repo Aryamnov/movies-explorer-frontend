@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import movieExample from "../images/movie-example.jpg";
 import checkMark from "../images/check-mark.svg";
 import away from "../images/delete.svg";
 

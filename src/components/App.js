@@ -7,7 +7,6 @@ import Technologies from "./Technologies";
 import Student from "./Student";
 import Footer from "./Footer";
 import SearchForm from "./SearchForm";
-import Preloader from "./Preloader";
 import MoviesCardList from "./MoviesCardList";
 import Profile from "./Profile";
 import Register from "./Register";
@@ -21,6 +20,9 @@ function App() {
   const [cards, setCards] = React.useState([]);
   const [request, setRequest] = React.useState("");
   const [fill, setFill] = React.useState(true);
+  const [isLoading, setLoading] = React.useState(false);
+
+  //console.log(window.innerWidth);
 
   function handleChangeRequest(e) {
     if (e.target.value === "") {
@@ -42,6 +44,7 @@ function App() {
 
   function handleSubmitSearch(e) {
     e.preventDefault();
+    setLoading(true);
     moviesApi
       .getCard()
       .then((movies) => {
@@ -53,23 +56,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      });
-  }
-
-  React.useEffect(() => {
-    moviesApi
-      .getCard()
-      .then((movies) => {
-        console.log(movies);
-        const moviesFilter = movies.filter(function (e) {
-          return e.nameRU.toLowerCase().includes('звук');
-        })
-        setCards(moviesFilter);
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+      .finally(() => setLoading(false));
+  }
 
   return (
     <div className="page">
@@ -88,8 +77,7 @@ function App() {
             onEdtitRequest={handleChangeRequest}
             onSubmit={handleSubmitSearch}
           />
-          <Preloader />
-          <MoviesCardList cards={cards} />
+          <MoviesCardList cards={cards} isLoading={isLoading} />
           <Footer />
           <Navigation
           isOpen={isMenuOpen}
@@ -99,7 +87,6 @@ function App() {
         <Route path="/saved-movies">
           <Header backgroundColor={"gray"} onOpen={handleMenuClick} />
           <SearchForm />
-          <Preloader />
           <MoviesCardList />
           <Footer />
           <Navigation
