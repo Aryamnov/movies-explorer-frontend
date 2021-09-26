@@ -21,8 +21,11 @@ function App() {
   const [request, setRequest] = React.useState("");
   const [fill, setFill] = React.useState(true);
   const [isLoading, setLoading] = React.useState(false);
+  const [isNotFound, setNotFound] = React.useState({status: false, message: "Ничего не найдено"});
 
-  //console.log(window.innerWidth);
+  React.useEffect(() => {
+    if (localStorage.getItem("cards")) setCards(JSON.parse(localStorage.getItem("cards")));
+  }, []);
 
   function handleChangeRequest(e) {
     if (e.target.value === "") {
@@ -44,17 +47,20 @@ function App() {
 
   function handleSubmitSearch(e) {
     e.preventDefault();
+    setNotFound({status: false});
     setLoading(true);
     moviesApi
       .getCard()
       .then((movies) => {
-        console.log(movies);
         const moviesFilter = movies.filter(function (element) {
           return element.nameRU.toLowerCase().includes(request.toLowerCase());
         })
+        if (moviesFilter.length === 0) setNotFound({status: true, message: "Ничего не найдено"});
+        localStorage.setItem("cards", JSON.stringify(moviesFilter));
         setCards(moviesFilter);
       })
       .catch((err) => {
+        setNotFound({status: true, message: "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"});
         console.log(err);
       })
       .finally(() => setLoading(false));
@@ -77,7 +83,7 @@ function App() {
             onEdtitRequest={handleChangeRequest}
             onSubmit={handleSubmitSearch}
           />
-          <MoviesCardList cards={cards} isLoading={isLoading} />
+          <MoviesCardList cards={cards} isLoading={isLoading} isNotFound={isNotFound} />
           <Footer />
           <Navigation
           isOpen={isMenuOpen}

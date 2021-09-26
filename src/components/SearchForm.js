@@ -16,7 +16,7 @@ function SearchForm({
           placeholder="Фильм"
           className="search__input"
           type="text"
-          minLength="2"
+          minLength="1"
           maxLength="40"
           value={request}
           onChange={onEdtitRequest}
