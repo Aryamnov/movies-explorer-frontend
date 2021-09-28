@@ -25,7 +25,7 @@ function Login({ handleLogin, isBadRequest }) {
         <input className="login__value" name="password" type="password" minLength="4" value={values.password || ""} required onChange={handleChange}></input>
         <span className="login__error">{errors.password}</span>
         <button className="login__buttom" disabled={!isValid}>Войти</button>
-        <span className="login__error">{isBadRequest ? isBadRequest : ""}</span>
+        <span className="login__bad-request">{isBadRequest ? isBadRequest : ""}</span>
       </form>
       <div className="login__nav">
         <p className="login__question">Ещё не зарегистрированы?</p>

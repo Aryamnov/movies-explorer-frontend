@@ -94,12 +94,16 @@
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/profile/__title/profile__title.css);
 @import url(./blocks/profile/__form/profile__form.css);
+@import url(./blocks/profile/__content/profile__content.css);
 @import url(./blocks/profile/__name/profile__name.css);
 @import url(./blocks/profile/__info/profile__info.css);
 @import url(./blocks/profile/__value/profile__value.css);
 @import url(./blocks/profile/__email/profile__email.css);
 @import url(./blocks/profile/__edit/profile__edit.css);
 @import url(./blocks/profile/__exit/profile__exit.css);
+@import url(./blocks/profile/__submit/profile__submit.css);
+@import url(./blocks/profile/__bad-request/profile__bad-request.css);
+@import url(./blocks/profile/__error/profile__error.css);
 @import url(./blocks/register/register.css);
 @import url(./blocks/register/__logo/register__logo.css);
 @import url(./blocks/register/__title/register__title.css);
@@ -111,6 +115,7 @@
 @import url(./blocks/register/__nav/register__nav.css);
 @import url(./blocks/register/__question/register__question.css);
 @import url(./blocks/register/__link/register__link.css);
+@import url(./blocks/register/__bad-request/register__bad-request.css);
 @import url(./blocks/login/login.css);
 @import url(./blocks/login/__logo/login__logo.css);
 @import url(./blocks/login/__title/login__title.css);
@@ -122,6 +127,7 @@
 @import url(./blocks/login/__nav/login__nav.css);
 @import url(./blocks/login/__question/login__question.css);
 @import url(./blocks/login/__link/login__link.css);
+@import url(./blocks/login/__bad-request/login__bad-request.css);
 @import url(./blocks/not-found/not-found.css);
 @import url(./blocks/not-found/__title/not-found__title.css);
 @import url(./blocks/not-found/__subtitle/not-found__subtitle.css);

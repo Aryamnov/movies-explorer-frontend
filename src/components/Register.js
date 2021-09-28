@@ -50,7 +50,7 @@ function Register({ handleRegister, isBadRequest }) {
         <span className="register__error">{errors.password}</span>
         <span className="register__error"></span>
         <button className="register__buttom" disabled={!isValid}>Зарегистрироваться</button>
-        <span className="register__error">{isBadRequest ? isBadRequest : ""}</span>
+        <span className="register__bad-request">{isBadRequest ? isBadRequest : ""}</span>
       </form>
       <div className="register__nav">
         <p className="register__question">Уже зарегистрированы?</p>
