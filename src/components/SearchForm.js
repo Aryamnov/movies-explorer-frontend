@@ -1,13 +1,7 @@
 import React from "react";
 import pointer from "../images/pointer.svg";
 
-function SearchForm({
-  request,
-  fill,
-  onEdtitRequest,
-  onSubmit
-}) {
-
+function SearchForm({ request, fill, onEdtitRequest, onSubmit }) {
   return (
     <section>
       <form onSubmit={onSubmit} className="search">
@@ -25,7 +19,15 @@ function SearchForm({
         <button type="submit" className="search__button">
           <img src={pointer} alt="Иконка для старта поиска." className="" />
         </button>
-        <span className={fill === false ? "search__error search__error_active" : "search__error"}>Нужно ввести ключевое слово</span>
+        <span
+          className={
+            fill === false
+              ? "search__error search__error_active"
+              : "search__error"
+          }
+        >
+          Нужно ввести ключевое слово
+        </span>
         <div className="search__container">
           <label className="search__check">
             <input className="search__checkbox" type="checkbox" />
