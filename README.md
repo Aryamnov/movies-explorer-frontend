@@ -1,1 +1,1 @@
-[Ссылка на проект](https://aryamnov.nomoredomains.club)
+[Ссылка на проект](http://aryamnov.nomoredomains.club)
