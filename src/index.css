@@ -104,6 +104,7 @@
 @import url(./blocks/profile/__submit/profile__submit.css);
 @import url(./blocks/profile/__bad-request/profile__bad-request.css);
 @import url(./blocks/profile/__error/profile__error.css);
+@import url(./blocks/profile/__success/profile__success.css);
 @import url(./blocks/register/register.css);
 @import url(./blocks/register/__logo/register__logo.css);
 @import url(./blocks/register/__title/register__title.css);

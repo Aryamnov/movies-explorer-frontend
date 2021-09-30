@@ -40,7 +40,10 @@ function App() {
   const [isBadRequest, setBadRequest] = React.useState("");
   const [isEditProfile, setEditProfile] = React.useState(false);
   const [isSavedMovies, setSavedMovies] = React.useState([]);
-  const [isStartSavedMovies, setStartSavedMovies] =React.useState([]);
+  const [isStartSavedMovies, setStartSavedMovies] = React.useState([]);
+  const [isShortFilms, setShortFilms] = React.useState(false);
+  const [isApiMovies, setApiMovies] = React.useState([]);
+  const [isSuccess, setSuccess] = React.useState("");
 
   const history = useHistory();
 
@@ -66,14 +69,28 @@ function App() {
     }
   };
 
+  const saveApiMovies = () => {
+    moviesApi
+      .getCard()
+      .then((movies) => {
+        setApiMovies(movies);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  };
+
   React.useEffect(() => {
     tokenCheck();
+    saveApiMovies();
   }, []);
 
   const handleChangeProfile = (name, email) => {
+    setSuccess("");
     updateUserInfo(name, email)
       .then((res) => {
         setBadRequest("");
+        setSuccess("Данные успешно изменены");
         setCurrentUser(res);
         setEditProfile(!isEditProfile);
       })
@@ -93,6 +110,7 @@ function App() {
 
   const handleEdit = () => {
     setEditProfile(!isEditProfile);
+    setSuccess("");
   };
 
   const handleSaveCard = (card) => {
@@ -120,6 +138,10 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const handleShortMovies = () => {
+    setShortFilms(!isShortFilms);
   };
 
   const handleRegister = (name, email, password) => {
@@ -174,13 +196,23 @@ function App() {
   const onSignOut = () => {
     localStorage.removeItem("jwt");
     setLoggedIn(false);
-    history.push("/signin");
+    history.push("/");
   };
 
   React.useEffect(() => {
     if (localStorage.getItem("cards"))
       setCards(JSON.parse(localStorage.getItem("cards")));
-  }, []);
+    if (isShortFilms) setCards(cards.filter(function (element) {
+      return element.duration < 41;
+    }));
+  }, [isShortFilms]);
+
+  React.useEffect(() => {
+    setSavedMovies(isStartSavedMovies);
+    if (isShortFilms) setSavedMovies(isSavedMovies.filter(function (element) {
+      return element.duration < 41;
+    }));
+  }, [isShortFilms, isSavedMovies])
 
   function handleChangeRequest(e) {
     if (e.target.value === "") {
@@ -222,26 +254,19 @@ function App() {
     e.preventDefault();
     setNotFound({ status: false });
     setLoading(true);
-    moviesApi
-      .getCard()
-      .then((movies) => {
-        const moviesFilter = movies.filter(function (element) {
-          return element.nameRU.toLowerCase().includes(request.toLowerCase());
-        });
-        if (moviesFilter.length === 0)
-          setNotFound({ status: true, message: "Ничего не найдено" });
-        localStorage.setItem("cards", JSON.stringify(moviesFilter));
-        setCards(moviesFilter);
-      })
-      .catch((err) => {
-        setNotFound({
-          status: true,
-          message:
-            "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз",
-        });
-        console.log(err);
-      })
-      .finally(() => setLoading(false));
+    const moviesFilter = isApiMovies.filter(function (element) {
+      return element.nameRU.toLowerCase().includes(request.toLowerCase());
+    });
+    if (moviesFilter.length === 0)
+      setNotFound({ status: true, message: "Ничего не найдено" });
+    localStorage.setItem("cards", JSON.stringify(moviesFilter));
+    setCards(moviesFilter);
+    if (isApiMovies.length === 0) setNotFound({
+      status: true,
+      message:
+        "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз",
+    });
+    setLoading(false);
   }
 
   function handleSubmitSearchinSaved(e) {
@@ -273,6 +298,7 @@ function App() {
               fill={fill}
               onEdtitRequest={handleChangeRequest}
               onSubmit={handleSubmitSearch}
+              handleShortMovies={handleShortMovies}
             />
             <MoviesCardList
               cards={cards}
@@ -297,6 +323,7 @@ function App() {
               fill={fill}
               onEdtitRequest={handleChangeRequest}
               onSubmit={handleSubmitSearchinSaved}
+              handleShortMovies={handleShortMovies}
             />
             <MoviesCardList
               cards={isSavedMovies}
@@ -320,6 +347,7 @@ function App() {
               isEditProfile={isEditProfile}
               handleEdit={handleEdit}
               isBadRequest={isBadRequest}
+              isSuccess={isSuccess}
             />
             <Navigation isOpen={isMenuOpen} onClose={closeMenu} />
           </ProtectedRoute>

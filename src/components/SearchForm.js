@@ -1,7 +1,7 @@
 import React from "react";
 import pointer from "../images/pointer.svg";
 
-function SearchForm({ request, fill, onEdtitRequest, onSubmit }) {
+function SearchForm({ request, fill, onEdtitRequest, onSubmit, handleShortMovies, isShortFilms }) {
   return (
     <section>
       <form onSubmit={onSubmit} className="search">
@@ -30,7 +30,7 @@ function SearchForm({ request, fill, onEdtitRequest, onSubmit }) {
         </span>
         <div className="search__container">
           <label className="search__check">
-            <input className="search__checkbox" type="checkbox" />
+            <input className="search__checkbox" type="checkbox" onChange={handleShortMovies}/>
             <span className="search__box" />
             Короткометражки
           </label>

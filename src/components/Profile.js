@@ -8,8 +8,9 @@ function Profile({
   isEditProfile,
   handleEdit,
   isBadRequest,
+  isSuccess
 }) {
-  const { resetForm, values, handleChange, errors } =
+  const { resetForm, values, handleChange, errors, isValid } =
     useFormWithValidation();
 
   const currentUser = React.useContext(CurrentUserContext);
@@ -62,8 +63,11 @@ function Profile({
         <span className="profile__error">
           {errors.email ? "Введите email" : ""}
         </span>
+        <span className="profile__success">
+          {isSuccess ? isSuccess : ""}
+        </span>
         {isEditProfile ? (
-          <button className="profile__submit">Сохранить</button>
+          <button className="profile__submit" disabled={!isValid}>Сохранить</button>
         ) : (
           <></>
         )}

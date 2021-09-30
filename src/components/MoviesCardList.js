@@ -10,6 +10,7 @@ function MoviesCardList({
   handleSaveCard,
   isSavedMovies,
   handleDeleteCard,
+  isShortFilms,
 }) {
   const location = useLocation();
 
