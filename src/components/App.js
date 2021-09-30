@@ -40,6 +40,7 @@ function App() {
   const [isBadRequest, setBadRequest] = React.useState("");
   const [isEditProfile, setEditProfile] = React.useState(false);
   const [isSavedMovies, setSavedMovies] = React.useState([]);
+  const [isStartSavedMovies, setStartSavedMovies] =React.useState([]);
 
   const history = useHistory();
 
@@ -112,8 +113,9 @@ function App() {
       id = card._id;
     }
     deleteMovies(id)
-      .then((res) => {
-        getSavedCards();
+      .then((movieDeleted) => {
+        setSavedMovies(isSavedMovies.filter(movie => movieDeleted._id !== movie._id));
+        setStartSavedMovies(isSavedMovies);
       })
       .catch((err) => {
         console.log(err);
@@ -205,6 +207,7 @@ function App() {
           return movie.owner === currentUser._id;
         });
         setSavedMovies(userSavedMovies);
+        setStartSavedMovies(userSavedMovies);
       })
       .catch((err) => {
         console.log(err);
@@ -239,6 +242,19 @@ function App() {
         console.log(err);
       })
       .finally(() => setLoading(false));
+  }
+
+  function handleSubmitSearchinSaved(e) {
+    e.preventDefault();
+    setNotFound({ status: false });
+    setLoading(true);
+    const moviesFilter = isStartSavedMovies.filter(function (element) {
+      return element.nameRU.toLowerCase().includes(request.toLowerCase());
+    });
+    setSavedMovies(moviesFilter);
+    if (isSavedMovies.length === 0)
+          setNotFound({ status: true, message: "Ничего не найдено" });
+    setLoading(false);
   }
 
   return (
@@ -280,7 +296,7 @@ function App() {
               request={request}
               fill={fill}
               onEdtitRequest={handleChangeRequest}
-              onSubmit={handleSubmitSearch}
+              onSubmit={handleSubmitSearchinSaved}
             />
             <MoviesCardList
               cards={isSavedMovies}
