@@ -10,7 +10,7 @@ function MoviesCardList({
   handleSaveCard,
   isSavedMovies,
   handleDeleteCard,
-  isShortFilms,
+  isBlockButton
 }) {
   const location = useLocation();
 
@@ -53,6 +53,7 @@ function MoviesCardList({
                 handleSaveCard={handleSaveCard}
                 isSavedMovies={isSavedMovies}
                 handleDeleteCard={handleDeleteCard}
+                isBlockButton={isBlockButton}
               />
             ))}
           </ul>

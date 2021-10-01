@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import checkMark from "../images/check-mark.svg";
 import away from "../images/delete.svg";
 
-function MoviesCard({ card, handleSaveCard, isSavedMovies, handleDeleteCard }) {
+function MoviesCard({ card, handleSaveCard, isSavedMovies, handleDeleteCard, isBlockButton }) {
   const urlTrailer = "https://api.nomoreparties.co" + card.image.url;
 
   const [isSavedCard, setSavedCard] = React.useState(false);
@@ -35,7 +35,7 @@ function MoviesCard({ card, handleSaveCard, isSavedMovies, handleDeleteCard }) {
             >
               <img
                 className="movie__image"
-                alt="ПРимер для верстки."
+                alt="Пример для верстки."
                 src={urlTrailer}
               />
             </a>
@@ -46,6 +46,7 @@ function MoviesCard({ card, handleSaveCard, isSavedMovies, handleDeleteCard }) {
                   : "movie__save"
               }
               onClick={handleSendSaveCard}
+              disabled={isBlockButton}
             >
               {isSavedCard === true ? (
                 <img

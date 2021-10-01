@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo.svg";
 import { useFormWithValidation } from "../hooks/useForm";
 
-function Register({ handleRegister, isBadRequest }) {
+function Register({ handleRegister, isBadRequest, isBlockButton }) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
 
   const handleSubmit = (e) => {
@@ -57,7 +57,7 @@ function Register({ handleRegister, isBadRequest }) {
         ></input>
         <span className="register__error">{errors.password}</span>
         <span className="register__error"></span>
-        <button className="register__buttom" disabled={!isValid}>
+        <button className="register__buttom" disabled={!isValid || isBlockButton}>
           Зарегистрироваться
         </button>
         <span className="register__bad-request">

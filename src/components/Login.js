@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo.svg";
 import { useFormWithValidation } from "../hooks/useForm";
 
-function Login({ handleLogin, isBadRequest }) {
+function Login({ handleLogin, isBadRequest, isBlockButton }) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
 
   const handleSubmit = (e) => {
@@ -42,7 +42,7 @@ function Login({ handleLogin, isBadRequest }) {
           onChange={handleChange}
         ></input>
         <span className="login__error">{errors.password}</span>
-        <button className="login__buttom" disabled={!isValid}>
+        <button className="login__buttom" disabled={!isValid || isBlockButton}>
           Войти
         </button>
         <span className="login__bad-request">

@@ -8,18 +8,28 @@ function Profile({
   isEditProfile,
   handleEdit,
   isBadRequest,
-  isSuccess
+  isSuccess,
+  isBlockButton
 }) {
   const { resetForm, values, handleChange, errors, isValid } =
     useFormWithValidation();
 
   const currentUser = React.useContext(CurrentUserContext);
+  const [isNotChange, setNotChange] = React.useState(false);
 
   React.useEffect(() => {
     if (currentUser) {
       resetForm(currentUser, {}, true);
     }
   }, [currentUser, resetForm]);
+
+  React.useEffect(() => {
+    if (values.name === currentUser.name && values.email === currentUser.email) {
+      setNotChange(false);
+    } else {
+      setNotChange(true);
+    };
+  }, [values]);
 
   const handleSubmitEditProfile = (e) => {
     e.preventDefault();
@@ -67,7 +77,7 @@ function Profile({
           {isSuccess ? isSuccess : ""}
         </span>
         {isEditProfile ? (
-          <button className="profile__submit" disabled={!isValid}>Сохранить</button>
+          <button className="profile__submit" disabled={!isValid || !isNotChange || isBlockButton}>Сохранить</button>
         ) : (
           <></>
         )}

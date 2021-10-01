@@ -44,6 +44,7 @@ function App() {
   const [isShortFilms, setShortFilms] = React.useState(false);
   const [isApiMovies, setApiMovies] = React.useState([]);
   const [isSuccess, setSuccess] = React.useState("");
+  const [isBlockButton, setBlockButton] = React.useState(false);
 
   const history = useHistory();
 
@@ -86,6 +87,7 @@ function App() {
   }, []);
 
   const handleChangeProfile = (name, email) => {
+    setBlockButton(true);
     setSuccess("");
     updateUserInfo(name, email)
       .then((res) => {
@@ -105,7 +107,8 @@ function App() {
           setBadRequest("На сервере произошла ошибка");
         else setBadRequest("При обновлении профиля произошла ошибка");
         console.log(err);
-      });
+      })
+      .finally(() => setBlockButton(false));
   };
 
   const handleEdit = () => {
@@ -114,16 +117,19 @@ function App() {
   };
 
   const handleSaveCard = (card) => {
+    setBlockButton(true);
     saveCard(card)
       .then((res) => {
         getSavedCards();
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(() => setBlockButton(false));
   };
 
   const handleDeleteCard = (card) => {
+    setBlockButton(true);
     let id = 0;
     if (card.id) {
       id = isSavedMovies.find((item) => item.movieId === card.id)._id;
@@ -137,7 +143,8 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(() => setBlockButton(false));
   };
 
   const handleShortMovies = () => {
@@ -145,6 +152,7 @@ function App() {
   };
 
   const handleRegister = (name, email, password) => {
+    setBlockButton(true);
     auth
       .register(name, email, password)
       .then((data) => {
@@ -163,10 +171,12 @@ function App() {
           setBadRequest("На сервере произошла ошибка");
         else setBadRequest("При регистрации пользователя произошла ошибка");
         console.log(err);
-      });
+      })
+      .finally(() => setBlockButton(false));
   };
 
   const handleLogin = (email, password) => {
+    setBlockButton(true);
     auth
       .authorize(email, password)
       .then((data) => {
@@ -190,7 +200,8 @@ function App() {
           setBadRequest("На сервере произошла ошибка");
         else setBadRequest("При обновлении профиля произошла ошибка");
         console.log(err);
-      });
+      })
+      .finally(() => setBlockButton(false));
   };
 
   const onSignOut = () => {
@@ -212,7 +223,7 @@ function App() {
     if (isShortFilms) setSavedMovies(isSavedMovies.filter(function (element) {
       return element.duration < 41;
     }));
-  }, [isShortFilms, isSavedMovies])
+  }, [isShortFilms])
 
   function handleChangeRequest(e) {
     if (e.target.value === "") {
@@ -307,6 +318,7 @@ function App() {
               handleSaveCard={handleSaveCard}
               isSavedMovies={isSavedMovies}
               handleDeleteCard={handleDeleteCard}
+              isBlockButton={isBlockButton}
             />
             <Footer />
             <Navigation isOpen={isMenuOpen} onClose={closeMenu} />
@@ -348,6 +360,7 @@ function App() {
               handleEdit={handleEdit}
               isBadRequest={isBadRequest}
               isSuccess={isSuccess}
+              isBlockButton={isBlockButton}
             />
             <Navigation isOpen={isMenuOpen} onClose={closeMenu} />
           </ProtectedRoute>
@@ -355,10 +368,11 @@ function App() {
             <Register
               handleRegister={handleRegister}
               isBadRequest={isBadRequest}
+              isBlockButton={isBlockButton}
             />
           </Route>
           <Route path="/signin">
-            <Login handleLogin={handleLogin} isBadRequest={isBadRequest} />
+            <Login handleLogin={handleLogin} isBadRequest={isBadRequest} isBlockButton={isBlockButton} />
           </Route>
           <Route exact path="/">
             <Header loggedIn={loggedIn} userEmail={userEmail} />
