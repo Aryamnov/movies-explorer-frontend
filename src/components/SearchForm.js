@@ -1,7 +1,14 @@
 import React from "react";
 import pointer from "../images/pointer.svg";
 
-function SearchForm({ request, fill, onEdtitRequest, onSubmit, handleShortMovies, isShortFilms }) {
+function SearchForm({
+  request,
+  fill,
+  onEdtitRequest,
+  onSubmit,
+  handleShortMovies,
+  isShortFilms,
+}) {
   return (
     <section>
       <form onSubmit={onSubmit} className="search">
@@ -10,11 +17,9 @@ function SearchForm({ request, fill, onEdtitRequest, onSubmit, handleShortMovies
           placeholder="Фильм"
           className="search__input"
           type="text"
-          minLength="1"
           maxLength="40"
           value={request}
           onChange={onEdtitRequest}
-          required
         />
         <button type="submit" className="search__button">
           <img src={pointer} alt="Иконка для старта поиска." className="" />
@@ -30,7 +35,11 @@ function SearchForm({ request, fill, onEdtitRequest, onSubmit, handleShortMovies
         </span>
         <div className="search__container">
           <label className="search__check">
-            <input className="search__checkbox" type="checkbox" onChange={handleShortMovies}/>
+            <input
+              className="search__checkbox"
+              type="checkbox"
+              onChange={handleShortMovies}
+            />
             <span className="search__box" />
             Короткометражки
           </label>

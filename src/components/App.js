@@ -45,12 +45,14 @@ function App() {
   const [isApiMovies, setApiMovies] = React.useState([]);
   const [isSuccess, setSuccess] = React.useState("");
   const [isBlockButton, setBlockButton] = React.useState(false);
+  const [isAuthChecking, setAuthChecking] = React.useState(true);
 
   const history = useHistory();
 
   const tokenCheck = () => {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
+      setAuthChecking(true);
       auth
         .getContent(jwt)
         .then((res) => {
@@ -58,7 +60,6 @@ function App() {
             setCurrentUser(res);
             setUserEmail(res.email);
             setLoggedIn(true);
-            history.push("/movies");
           }
         })
         .catch((err) => {
@@ -66,9 +67,16 @@ function App() {
           setBadRequest(
             "При авторизации произошла ошибка. Переданный токен некорректен"
           );
-        });
+        })
+        .finally(() => setAuthChecking(false));
+    } else {
+      setAuthChecking(false);
     }
   };
+
+  React.useEffect(() => {
+    tokenCheck();
+  }, [history]);
 
   const saveApiMovies = () => {
     moviesApi
@@ -78,11 +86,10 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      })
+      });
   };
 
   React.useEffect(() => {
-    tokenCheck();
     saveApiMovies();
   }, []);
 
@@ -138,7 +145,9 @@ function App() {
     }
     deleteMovies(id)
       .then((movieDeleted) => {
-        setSavedMovies(isSavedMovies.filter(movie => movieDeleted._id !== movie._id));
+        setSavedMovies(
+          isSavedMovies.filter((movie) => movieDeleted._id !== movie._id)
+        );
         setStartSavedMovies(isSavedMovies);
       })
       .catch((err) => {
@@ -156,7 +165,6 @@ function App() {
     auth
       .register(name, email, password)
       .then((data) => {
-        console.log(data[0]);
         setBadRequest("");
         handleLogin(email, password);
       })
@@ -186,7 +194,7 @@ function App() {
           setLoggedIn(true);
           setBadRequest("");
           tokenCheck();
-          history.push("/");
+          history.push("/movies");
         }
       })
       .catch((err) => {
@@ -213,26 +221,33 @@ function App() {
   React.useEffect(() => {
     if (localStorage.getItem("cards"))
       setCards(JSON.parse(localStorage.getItem("cards")));
-    if (isShortFilms) setCards(cards.filter(function (element) {
-      return element.duration < 41;
-    }));
+    if (isShortFilms)
+      setCards(
+        cards.filter(function (element) {
+          return element.duration < 41;
+        })
+      );
   }, [isShortFilms]);
 
   React.useEffect(() => {
     setSavedMovies(isStartSavedMovies);
-    if (isShortFilms) setSavedMovies(isSavedMovies.filter(function (element) {
-      return element.duration < 41;
-    }));
-  }, [isShortFilms])
+    if (isShortFilms)
+      setSavedMovies(
+        isSavedMovies.filter(function (element) {
+          return element.duration < 41;
+        })
+      );
+  }, [isShortFilms]);
 
   function handleChangeRequest(e) {
-    if (e.target.value === "") {
+    /*if (e.target.value === "") {
       setFill(false);
       setRequest(e.target.value);
       return;
     }
     setRequest(e.target.value);
-    setFill(true);
+    setFill(true);*/
+    setRequest(e.target.value);
   }
 
   const handleMenuClick = () => {
@@ -263,41 +278,58 @@ function App() {
 
   function handleSubmitSearch(e) {
     e.preventDefault();
-    setNotFound({ status: false });
-    setLoading(true);
-    const moviesFilter = isApiMovies.filter(function (element) {
-      return element.nameRU.toLowerCase().includes(request.toLowerCase());
-    });
-    if (moviesFilter.length === 0)
-      setNotFound({ status: true, message: "Ничего не найдено" });
-    localStorage.setItem("cards", JSON.stringify(moviesFilter));
-    setCards(moviesFilter);
-    if (isApiMovies.length === 0) setNotFound({
-      status: true,
-      message:
-        "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз",
-    });
-    setLoading(false);
+    if (request === "") {
+      setFill(false);
+      return;
+    } else {
+      setFill(true);
+      setNotFound({ status: false });
+      setLoading(true);
+      const moviesFilter = isApiMovies.filter(function (element) {
+        return element.nameRU.toLowerCase().includes(request.toLowerCase());
+      });
+      if (moviesFilter.length === 0)
+        setNotFound({ status: true, message: "Ничего не найдено" });
+      localStorage.setItem("cards", JSON.stringify(moviesFilter));
+      setCards(moviesFilter);
+      if (isApiMovies.length === 0)
+        setNotFound({
+          status: true,
+          message:
+            "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз",
+        });
+      setLoading(false);
+    }
   }
 
   function handleSubmitSearchinSaved(e) {
     e.preventDefault();
-    setNotFound({ status: false });
-    setLoading(true);
-    const moviesFilter = isStartSavedMovies.filter(function (element) {
-      return element.nameRU.toLowerCase().includes(request.toLowerCase());
-    });
-    setSavedMovies(moviesFilter);
-    if (isSavedMovies.length === 0)
-          setNotFound({ status: true, message: "Ничего не найдено" });
-    setLoading(false);
+    if (request === "") {
+      setFill(false);
+      return;
+    } else {
+      setFill(true);
+      setNotFound({ status: false });
+      setLoading(true);
+      const moviesFilter = isStartSavedMovies.filter(function (element) {
+        return element.nameRU.toLowerCase().includes(request.toLowerCase());
+      });
+      setSavedMovies(moviesFilter);
+      if (moviesFilter.length === 0)
+        setNotFound({ status: true, message: "Ничего не найдено" });
+      setLoading(false);
+    }
   }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Switch>
-          <ProtectedRoute loggedIn={loggedIn} path="/movies">
+          <ProtectedRoute
+            loggedIn={loggedIn}
+            isAuthChecking={isAuthChecking}
+            path="/movies"
+          >
             <Header
               backgroundColor={"gray"}
               onOpen={handleMenuClick}
@@ -323,7 +355,11 @@ function App() {
             <Footer />
             <Navigation isOpen={isMenuOpen} onClose={closeMenu} />
           </ProtectedRoute>
-          <ProtectedRoute loggedIn={loggedIn} path="/saved-movies">
+          <ProtectedRoute
+            loggedIn={loggedIn}
+            isAuthChecking={isAuthChecking}
+            path="/saved-movies"
+          >
             <Header
               backgroundColor={"gray"}
               onOpen={handleMenuClick}
@@ -346,7 +382,11 @@ function App() {
             <Footer />
             <Navigation isOpen={isMenuOpen} onClose={closeMenu} />
           </ProtectedRoute>
-          <ProtectedRoute loggedIn={loggedIn} path="/profile">
+          <ProtectedRoute
+            loggedIn={loggedIn}
+            isAuthChecking={isAuthChecking}
+            path="/profile"
+          >
             <Header
               backgroundColor={"gray"}
               onOpen={handleMenuClick}
@@ -369,10 +409,16 @@ function App() {
               handleRegister={handleRegister}
               isBadRequest={isBadRequest}
               isBlockButton={isBlockButton}
+              loggedIn={loggedIn}
             />
           </Route>
           <Route path="/signin">
-            <Login handleLogin={handleLogin} isBadRequest={isBadRequest} isBlockButton={isBlockButton} />
+            <Login
+              handleLogin={handleLogin}
+              isBadRequest={isBadRequest}
+              isBlockButton={isBlockButton}
+              loggedIn={loggedIn}
+            />
           </Route>
           <Route exact path="/">
             <Header loggedIn={loggedIn} userEmail={userEmail} />
