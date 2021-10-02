@@ -53,7 +53,7 @@ function Register({ handleRegister, isBadRequest, isBlockButton, loggedIn }) {
               className="register__value"
               placeholder="Введите пароль"
               type="password"
-              minLength="4"
+              minLength="8"
               value={values.password || ""}
               name="password"
               required

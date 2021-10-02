@@ -40,7 +40,7 @@ function Login({ handleLogin, isBadRequest, isBlockButton, loggedIn }) {
               className="login__value"
               name="password"
               type="password"
-              minLength="4"
+              minLength="8"
               value={values.password || ""}
               required
               onChange={handleChange}
