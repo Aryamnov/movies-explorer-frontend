@@ -6,4 +6,7 @@
     text-align: right;
     color: #FFFFFF;
     margin: 0;
+    background-color: #202020;
+    border: none;
+    min-width: 75%;
 }

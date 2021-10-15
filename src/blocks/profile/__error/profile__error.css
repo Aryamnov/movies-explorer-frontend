@@ -1,0 +1,9 @@
+.profile__error {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+    text-align: right;
+}

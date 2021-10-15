@@ -1,26 +1,90 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import movieExample from "../images/movie-example.jpg";
 import checkMark from "../images/check-mark.svg";
 import away from "../images/delete.svg";
 
-function MoviesCard(props) {
+function MoviesCard({ card, handleSaveCard, isSavedMovies, handleDeleteCard, isBlockButton }) {
+  const urlTrailer = "https://api.nomoreparties.co" + card.image.url;
+
+  const [isSavedCard, setSavedCard] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isSavedMovies) {
+      setSavedCard(isSavedMovies.some((movie) => card.id === movie.movieId));
+    }
+  }, [card, isSavedMovies]);
+
+  const handleSendSaveCard = () => {
+    !isSavedCard ? handleSaveCard(card) : handleDeleteCard(card);
+  };
+
+  const handleDeleteSaveCard = () => {
+    handleDeleteCard(card);
+  };
+
   return (
     <li className="movie">
       <div className="movie__contant">
-        <a className="movie__link" href="https://www.youtube.com/watch?v=YjSSubEUY3E" target="_blank" rel="noreferrer"><img className="movie__image" alt="ПРимер для верстки." src={movieExample} /></a>
         <Switch>
           <Route path="/movies">
-            <button className={props.saved === true ? "movie__save movie__save_active" : "movie__save"}>{props.saved === true ? <img src={checkMark} alt="Иконка для сохранения и отображения состояния сохранения."/> : "Сохранить"}</button>
+            <a
+              className="movie__link"
+              href={card.trailerLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="movie__image"
+                alt="Пример для верстки."
+                src={urlTrailer}
+              />
+            </a>
+            <button
+              className={
+                isSavedCard === true
+                  ? "movie__save movie__save_active"
+                  : "movie__save"
+              }
+              onClick={handleSendSaveCard}
+              disabled={isBlockButton}
+            >
+              {isSavedCard === true ? (
+                <img
+                  src={checkMark}
+                  alt="Иконка для сохранения и отображения состояния сохранения."
+                />
+              ) : (
+                "Сохранить"
+              )}
+            </button>
           </Route>
           <Route path="/saved-movies">
-            <button className="movie__save movie__save_close"><img src={away} alt="Иконка закрытия."/></button>
+            <a
+              className="movie__link"
+              href={card.trailer}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="movie__image"
+                alt="Логотип фильма."
+                src={card.image}
+              />
+            </a>
+            <button
+              className="movie__save movie__save_close"
+              onClick={handleDeleteSaveCard}
+            >
+              <img src={away} alt="Иконка удаления карточки." />
+            </button>
           </Route>
         </Switch>
       </div>
       <div className="movie__info">
-        <h2 className="movie__name">33 слова о дизайне</h2>
-        <p className="movie__time">1ч 17м</p>
+        <h2 className="movie__name">{card.nameRU}</h2>
+        <p className="movie__time">{`${Math.floor(card.duration / 60)} ч ${
+          card.duration % 60
+        } м`}</p>
       </div>
     </li>
   );

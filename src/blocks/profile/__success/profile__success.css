@@ -1,0 +1,9 @@
+.profile__success {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #34EE65;
+    text-align: center;
+}

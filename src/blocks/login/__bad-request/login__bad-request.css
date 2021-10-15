@@ -1,0 +1,9 @@
+.login__bad-request {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #EE3465;
+    text-align: center;
+}

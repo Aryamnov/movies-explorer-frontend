@@ -1,0 +1,11 @@
+.search__error {
+    display: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+    position: relative;
+    bottom: 60px;
+    left: 20px;
+}

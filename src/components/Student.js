@@ -18,35 +18,85 @@ function Student(props) {
               ищу работу веб-разработчиком.
             </p>
             <div className="student__links">
-              <a className="student__link" href="https://t.me/aryamnov" target="_blank" rel="noreferrer">
+              <a
+                className="student__link"
+                href="https://t.me/aryamnov"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Telegram
               </a>
-              <a className="student__link" href="https://github.com/Aryamnov" target="_blank" rel="noreferrer">
+              <a
+                className="student__link"
+                href="https://github.com/Aryamnov"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Github
               </a>
             </div>
           </div>
-          <img className="student__avatar" alt="Аватарка студента." src={avatar} />
+          <img
+            className="student__avatar"
+            alt="Аватарка студента."
+            src={avatar}
+          />
         </div>
         <p className="student__portfolio">Портфолио</p>
         <ul className="student__works">
           <li className="student__work">
-            <a className="student__reference" href="https://aryamnov.github.io/how-to-learn/" target="_blank" rel="noreferrer">
+            <a
+              className="student__reference"
+              href="https://aryamnov.github.io/how-to-learn/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Статичный сайт
             </a>
-            <a className="student__arrow" href="https://aryamnov.github.io/how-to-learn/" target="_blank" rel="noreferrer">↗</a>
+            <a
+              className="student__arrow"
+              href="https://aryamnov.github.io/how-to-learn/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ↗
+            </a>
           </li>
           <li className="student__work">
-            <a className="student__reference" href="https://aryamnov.github.io/russian-travel/" target="_blank" rel="noreferrer">
+            <a
+              className="student__reference"
+              href="https://aryamnov.github.io/russian-travel/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Адаптивный сайт
             </a>
-            <a className="student__arrow" href="https://aryamnov.github.io/russian-travel/" target="_blank" rel="noreferrer">↗</a>
+            <a
+              className="student__arrow"
+              href="https://aryamnov.github.io/russian-travel/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ↗
+            </a>
           </li>
           <li className="student__work">
-            <a className="student__reference" href="https://mesto-aryamnov.nomoredomains.club/sign-in" target="_blank" rel="noreferrer">
+            <a
+              className="student__reference"
+              href="https://mesto-aryamnov.nomoredomains.club/sign-in"
+              target="_blank"
+              rel="noreferrer"
+            >
               Одностраничное приложение
             </a>
-            <a className="student__arrow" href="https://mesto-aryamnov.nomoredomains.club/sign-in" target="_blank" rel="noreferrer">↗</a>
+            <a
+              className="student__arrow"
+              href="https://mesto-aryamnov.nomoredomains.club/sign-in"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ↗
+            </a>
           </li>
         </ul>
       </div>

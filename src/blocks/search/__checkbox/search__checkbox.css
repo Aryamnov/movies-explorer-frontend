@@ -6,5 +6,5 @@
 }
 
 .search__checkbox:checked + .search__box {
-    background-image: url(../../../images/checkbox_off.svg);
+    background-image: url(../../../images/checkbox_on.svg);
 }
