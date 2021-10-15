@@ -1,0 +1,19 @@
+.title__container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 1150px) {
+    .title__container {
+        margin: 0 44px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .title__container {
+        margin: 0 10px;
+    }
+}

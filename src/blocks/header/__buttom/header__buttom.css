@@ -1,0 +1,18 @@
+.header__buttom {
+    background-color:#3DDC84;
+    width: 76px;
+    min-height: 32px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 500px) {
+    .header__buttom {
+        width: 54px;
+        min-height: 26px;
+    }
+}

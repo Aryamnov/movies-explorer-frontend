@@ -1,0 +1,20 @@
+.header__login {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #000000;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    transition: opacity 0.7s;
+}
+
+.header__login:hover {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 500px) {
+    .header__login {
+        margin-left: 14px;
+    }
+}

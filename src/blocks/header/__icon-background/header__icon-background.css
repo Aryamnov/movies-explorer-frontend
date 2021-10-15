@@ -1,0 +1,8 @@
+.header__icon-background {
+    width: 26px;
+    height: 26px;
+    background-color: #313131;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}

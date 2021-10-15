@@ -1,0 +1,19 @@
+.movie__save_active {
+    width: 21px;
+    height: 21px;
+    background-color: #EE3465;
+    right: -325px;
+    z-index: 3;
+}
+
+@media screen and (max-width: 800px) {
+    .movie__save_active {
+        right: -301px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .movie__save_active {
+        right: -262px;
+    }
+}

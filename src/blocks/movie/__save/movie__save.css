@@ -1,0 +1,34 @@
+.movie__save {
+    width: 72px;
+    height: 21px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 9px;
+    border: 0;
+    background-color: #313131;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #FFFFFF;
+    position: relative;
+    top: -191px;
+    right: -274px;
+}
+
+.movie__save:hover {
+    z-index: 4;
+}
+
+@media screen and (max-width: 800px) {
+    .movie__save {
+        right: -250px;
+        top: -180px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .movie__save {
+        right: -211px;
+        top: -158px;
+    }
+}

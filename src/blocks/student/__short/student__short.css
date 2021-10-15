@@ -1,0 +1,24 @@
+.student__short {
+    padding-bottom: 26px;
+    margin: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .student__short {
+        padding-bottom: 20px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .student__short {
+        padding-bottom: 20px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+}

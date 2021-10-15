@@ -1,0 +1,16 @@
+.menu__container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 520px;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #202020;
+}
+
+@media screen and (max-width: 520px) {
+    .menu__container {
+        width: 100%;
+    }
+}

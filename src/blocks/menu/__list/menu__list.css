@@ -1,0 +1,20 @@
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 112px 0 621px 0;
+}
+
+@media screen and (max-width: 700px) {
+    .menu__list {
+        margin-bottom: 450px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .menu__list {
+        margin-bottom: 420px;
+    }
+}

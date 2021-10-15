@@ -1,0 +1,16 @@
+.student__container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1150px) {
+    .student__container {
+        margin: 0 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .student__container {
+        margin: 0 14px;
+    }
+}

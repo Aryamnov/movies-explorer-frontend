@@ -1,0 +1,17 @@
+.about__share {
+    display: flex;
+    padding-bottom: 110px;
+}
+
+@media screen and (max-width: 900px) {
+    .about__share {
+        padding-bottom: 90px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about__share {
+        padding-bottom: 70px;
+    }
+}

@@ -1,0 +1,9 @@
+.technologies {
+    background-color: #272727;
+}
+
+@media screen and (max-width: 600px) {
+    .technologies {
+        background-color: #202020;
+    }
+}

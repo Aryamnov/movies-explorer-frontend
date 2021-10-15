@@ -1,0 +1,23 @@
+.technologies__element {
+    width: 90px;
+    min-height: 60px;
+    border-radius: 10px;
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .technologies__element {
+        width: 84px;
+        min-height: 57px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .technologies__element {
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+}

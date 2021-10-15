@@ -1,0 +1,19 @@
+.movie__info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .movie__info {
+        bottom: -1px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .movie__info {
+        bottom: 10px;
+    }
+}

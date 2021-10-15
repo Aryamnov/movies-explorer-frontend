@@ -1,0 +1,9 @@
+.menu__element {
+    margin-bottom: 28px;
+}
+
+@media screen and (max-width: 520px) {
+    .menu__element {
+        margin-bottom: 24px;
+    }
+}

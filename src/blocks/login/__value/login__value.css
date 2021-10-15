@@ -1,0 +1,26 @@
+.login__value {
+    background-color: #2F2F2F;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 46px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    padding-left: 15px;
+    font-size: 13px;
+    line-height: 16px;
+    transition: box-shadow 0.7s;
+}
+
+.login__value:focus {
+    box-shadow: 1px 0px 10px 0px rgba(255,255,255,0.75);
+    -webkit-box-shadow: 2px 0px 10px 0px rgba(255,255,255,0.75);
+    -moz-box-shadow: 2px 0px 10px 0px rgba(255,255,255,0.75);
+}
+
+@media screen and (max-width: 500px) {
+    .login__value {
+        width: calc(100% - 15px);
+    }
+}

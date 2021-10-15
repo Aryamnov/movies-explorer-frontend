@@ -1,0 +1,35 @@
+.technologies__list {
+    list-style-type: none;
+    display: flex;
+    max-width: 690px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 0 100px 0;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media screen and (max-width: 1000px) {
+    .technologies__list {
+        padding-bottom: 90px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .technologies__list {
+        flex-wrap: wrap;
+        margin: 0 30px;
+        padding-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .technologies__list {
+        margin: 0 14px;
+    }
+}
